@@ -70,7 +70,7 @@ export default function certificateEditor({
             function deleteObject(eventData, transform) {
                 var target = transform.target;
                 var canvas = target.canvas;
-                delete state[target['id']];
+                delete self.state[target['id']];
                 canvas.remove(target);
                 canvas.requestRenderAll();
             }
@@ -115,11 +115,11 @@ export default function certificateEditor({
                                    stroke: '#fff',
                                    strokeWidth: .1,
                                });
-                               delete oImg.controls['mtr']
-                              /* delete oImg.controls['mb']
-                               delete oImg.controls['mt']
-                               delete oImg.controls['ml']
-                               delete oImg.controls['mr']*/
+                               oImg.setControlVisible('mtr',false)
+                               oImg.setControlVisible('mb',false)
+                               oImg.setControlVisible('mt',false)
+                               oImg.setControlVisible('ml',false)
+                               oImg.setControlVisible('mr',false)
                                let f = fabric.Image.filters
                                oImg.filters[0]=new f.BlendColor({
                                    color: e.value?.color ??"#000000",
@@ -235,13 +235,11 @@ export default function certificateEditor({
                         stroke: '#fff',
                         strokeWidth: .1,
                     }).scale(0.2);
-                    delete oImg.controls['mtr']
-                  /*
-                    delete oImg.controls['mb']
-                    delete oImg.controls['mt']
-                    delete oImg.controls['ml']
-                    delete oImg.controls['mr']
-                  */
+                    oImg.setControlVisible('mtr',false)
+                    oImg.setControlVisible('mb',false)
+                    oImg.setControlVisible('mt',false)
+                    oImg.setControlVisible('ml',false)
+                    oImg.setControlVisible('mr',false)
                     let f = fabric.Image.filters
                     oImg.filters[0]=new f.BlendColor({
                         color: "#000000",

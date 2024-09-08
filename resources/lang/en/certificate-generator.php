@@ -1,6 +1,6 @@
 <?php
 
-// translations for Husamtariq/FilamentCertificateGenerator
+// translations for HusamTariq/FilamentCertificateGenerator
 return [
 
    "resource"=>[

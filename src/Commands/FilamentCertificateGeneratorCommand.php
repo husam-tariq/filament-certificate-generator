@@ -1,6 +1,6 @@
 <?php
 
-namespace Husamtariq\FilamentCertificateGenerator\Commands;
+namespace HusamTariq\FilamentCertificateGenerator\Commands;
 
 use Illuminate\Console\Command;
 

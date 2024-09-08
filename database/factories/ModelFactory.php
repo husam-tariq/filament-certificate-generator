@@ -1,6 +1,6 @@
 <?php
 
-namespace Husamtariq\FilamentCertificateGenerator\Database\Factories;
+namespace HusamTariq\FilamentCertificateGenerator\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

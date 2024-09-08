@@ -4,6 +4,7 @@ namespace HusamTariq\FilamentCertificateGenerator\Resources;
 
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
+use Filament\Support\Facades\FilamentIcon;
 use HusamTariq\FilamentCertificateGenerator\Actions\Table\DownloadCertificateAction;
 use HusamTariq\FilamentCertificateGenerator\Components\CertificateEditor;
 use Filament\Forms\Form;
@@ -12,6 +13,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use HusamTariq\FilamentCertificateGenerator\Models\CertificateTemplate;
+use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Storage;
 use Mpdf\Config\ConfigVariables;
@@ -33,12 +35,19 @@ class CertificateTemplateResource extends Resource
         return __("filament-certificate-generator::certificate-generator.resource.plural");
     }
 
+
+
     /**
      * @return string
      */
     public static function getModelLabel(): string
     {
         return __("filament-certificate-generator::certificate-generator.resource.singular");
+    }
+
+    public static function getNavigationIcon(): string | Htmlable | null
+    {
+        return 'certificate-icon';
     }
 
 

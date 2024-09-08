@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Husamtariq\\FilamentCertificateGenerator\\": "src/",
-            "Husamtariq\\FilamentCertificateGenerator\\Database\\Factories\\": "database/factories/"
+            "HusamTariq\\FilamentCertificateGenerator\\": "src/",
+            "HusamTariq\\FilamentCertificateGenerator\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Husamtariq\\FilamentCertificateGenerator\\Tests\\": "tests/"
+            "HusamTariq\\FilamentCertificateGenerator\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -59,10 +59,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Husamtariq\\FilamentCertificateGenerator\\FilamentCertificateGeneratorServiceProvider"
+                "HusamTariq\\FilamentCertificateGenerator\\FilamentCertificateGeneratorServiceProvider"
             ],
             "aliases": {
-                "FilamentCertificateGenerator": "Husamtariq\\FilamentCertificateGenerator\\Facades\\FilamentCertificateGenerator"
+                "FilamentCertificateGenerator": "HusamTariq\\FilamentCertificateGenerator\\Facades\\FilamentCertificateGenerator"
             }
         }
     },

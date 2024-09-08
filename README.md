@@ -46,8 +46,8 @@ return [
 ## Usage
 
 ```php
-$filamentCertificateGenerator = new Husamtariq\FilamentCertificateGenerator();
-echo $filamentCertificateGenerator->echoPhrase('Hello, Husamtariq!');
+$filamentCertificateGenerator = new HusamTariq\FilamentCertificateGenerator();
+echo $filamentCertificateGenerator->echoPhrase('Hello, HusamTariq!');
 ```
 
 ## Testing

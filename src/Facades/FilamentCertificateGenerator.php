@@ -1,16 +1,16 @@
 <?php
 
-namespace Husamtariq\FilamentCertificateGenerator\Facades;
+namespace HusamTariq\FilamentCertificateGenerator\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Husamtariq\FilamentCertificateGenerator\FilamentCertificateGenerator
+ * @see \HusamTariq\FilamentCertificateGenerator\FilamentCertificateGenerator
  */
 class FilamentCertificateGenerator extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Husamtariq\FilamentCertificateGenerator\FilamentCertificateGenerator::class;
+        return \HusamTariq\FilamentCertificateGenerator\FilamentCertificateGenerator::class;
     }
 }

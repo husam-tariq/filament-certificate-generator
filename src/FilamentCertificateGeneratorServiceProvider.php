@@ -1,6 +1,6 @@
 <?php
 
-namespace Husamtariq\FilamentCertificateGenerator;
+namespace HusamTariq\FilamentCertificateGenerator;
 
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
@@ -13,8 +13,9 @@ use Livewire\Features\SupportTesting\Testable;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Husamtariq\FilamentCertificateGenerator\Commands\FilamentCertificateGeneratorCommand;
-use Husamtariq\FilamentCertificateGenerator\Testing\TestsFilamentCertificateGenerator;
+use HusamTariq\FilamentCertificateGenerator\Commands\FilamentCertificateGeneratorCommand;
+use HusamTariq\FilamentCertificateGenerator\Testing\TestsFilamentCertificateGenerator;
+use BladeUI\Icons\Factory;
 
 class FilamentCertificateGeneratorServiceProvider extends PackageServiceProvider
 {
@@ -63,6 +64,12 @@ class FilamentCertificateGeneratorServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
+
+     /*   if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../resources/svg' => public_path('vendor/' . static::$name),
+            ], static::$name);
+        }*/
         // Asset Registration
         FilamentAsset::register(
             $this->getAssets(),
@@ -83,6 +90,17 @@ class FilamentCertificateGeneratorServiceProvider extends PackageServiceProvider
         Testable::mixin(new TestsFilamentCertificateGenerator);
     }
 
+    public function register()
+    {
+        $this->callAfterResolving(Factory::class, function (Factory $factory) {
+            $factory->add(static::$name, [
+                'path' => __DIR__ . '/../resources/svg',
+                'prefix' => "certificate",
+            ]);
+        });
+        parent::register();
+    }
+
     protected function getAssetPackageName(): ?string
     {
         return 'husam-tariq/filament-certificate-generator';
@@ -94,7 +112,7 @@ class FilamentCertificateGeneratorServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-           // Css::make('filament-certificate-generator-styles', __DIR__ . '/../resources/dist/filament-certificate-generator.css'),
+            Css::make('filament-certificate-generator-styles', __DIR__ . '/../resources/dist/filament-certificate-generator.css'),
             Js::make('filament-certificate-generator-libs',  'https://cdn.jsdelivr.net/npm/fabric@5.4.0/dist/fabric.min.js'),
             AlpineComponent::make('certificate-editor', __DIR__ . '/../resources/dist/filament-certificate-generator.js'),
        ];
@@ -115,7 +133,9 @@ class FilamentCertificateGeneratorServiceProvider extends PackageServiceProvider
      */
     protected function getIcons(): array
     {
-        return [];
+        return [
+           "filament-certificate-generator::certificate-icon"=>  '/../resources/svg/icon.svg'
+        ];
     }
 
     /**

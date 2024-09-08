@@ -1,5 +1,5 @@
 <?php
 
-namespace Husamtariq\FilamentCertificateGenerator;
+namespace HusamTariq\FilamentCertificateGenerator;
 
 class FilamentCertificateGenerator {}

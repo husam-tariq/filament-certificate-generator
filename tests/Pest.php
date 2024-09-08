@@ -1,5 +1,5 @@
 <?php
 
-use Husamtariq\FilamentCertificateGenerator\Tests\TestCase;
+use HusamTariq\FilamentCertificateGenerator\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

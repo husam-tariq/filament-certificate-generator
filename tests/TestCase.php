@@ -1,6 +1,6 @@
 <?php
 
-namespace Husamtariq\FilamentCertificateGenerator\Tests;
+namespace HusamTariq\FilamentCertificateGenerator\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
-use Husamtariq\FilamentCertificateGenerator\FilamentCertificateGeneratorServiceProvider;
+use HusamTariq\FilamentCertificateGenerator\FilamentCertificateGeneratorServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -25,7 +25,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Husamtariq\\FilamentCertificateGenerator\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'HusamTariq\\FilamentCertificateGenerator\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 

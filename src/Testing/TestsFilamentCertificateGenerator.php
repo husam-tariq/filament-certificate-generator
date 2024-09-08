@@ -1,6 +1,6 @@
 <?php
 
-namespace Husamtariq\FilamentCertificateGenerator\Testing;
+namespace HusamTariq\FilamentCertificateGenerator\Testing;
 
 use Livewire\Features\SupportTesting\Testable;
 
